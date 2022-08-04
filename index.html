@@ -19,24 +19,50 @@
   </head>
   <body>
     <header class="flex">
-      <nav>
-        <img src="./assets/logo.svg" />
+      <img src="./assets/logo.svg" />
+      <nav id="navigation">
+        <img
+          src="./assets/icon-close-menu.svg"
+          class="close-menu"
+          id="close-menu"
+        />
         <ul>
-          <li>
-            Features<span><img src="./assets/icon-arrow-down.svg" /></span>
+          <li id="features">
+            Features
+            <span>
+              <img src="./assets/icon-arrow-down.svg" />
+            </span>
           </li>
-          <li>
-            Company<span><img src="./assets/icon-arrow-down.svg" /></span>
+          <div id="features-list">
+            <ul class="sub-list" id="sub-list">
+              <li><img src="./assets/icon-todo.svg" alt="" />Todo List</li>
+              <li><img src="./assets/icon-calendar.svg" alt="" />Calender</li>
+              <li><img src="./assets/icon-reminders.svg" alt="" />Reminders</li>
+              <li><img src="./assets/icon-planning.svg" alt="" />Planning</li>
+            </ul>
+          </div>
+          <li id="company">
+            Company
+            <span>
+              <img src="./assets/icon-arrow-down.svg" />
+            </span>
           </li>
+          <div id="company-list">
+            <ul class="sub-list">
+              <li>History</li>
+              <li>Our team</li>
+              <li>Blog</li>
+            </ul>
+          </div>
           <li>Careers</li>
           <li>About</li>
         </ul>
         <div>
-          <button>Login</button>
-          <button>Register</button>
+          <button class="login">Login</button>
+          <button class="register">Register</button>
         </div>
       </nav>
-      <img src="./assets/icon-menu.svg" class="menu" />
+      <img src="./assets/icon-menu.svg" class="menu" id="open-menu" />
     </header>
     <main>
       <section>
@@ -53,7 +79,8 @@
           <span><img src="./assets/client-maker.svg" /></span>
         </div>
       </section>
-      <img src="./assets/image-hero-mobile.png" alt="" />
+      <img src="./assets/image-hero-mobile.png" alt="" class="main-image" />
     </main>
+    <script src="./source.js"></script>
   </body>
 </html>
