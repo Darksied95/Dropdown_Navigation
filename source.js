@@ -15,6 +15,8 @@ features.addEventListener("click", () => {
 
     if (featuresList.style.display === "" || featuresList.style.display === "none") {
         featuresList.style.display = "block"
+        companyList.style.display = 'none'
+
     } else {
         featuresList.style.display = "none"
     }
@@ -23,6 +25,7 @@ company.addEventListener("click", () => {
 
     if (companyList.style.display === "" || companyList.style.display === "none") {
         companyList.style.display = "block"
+        featuresList.style.display = 'none'
     } else {
         companyList.style.display = "none"
     }
