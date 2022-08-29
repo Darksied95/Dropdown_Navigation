@@ -43,7 +43,7 @@ nav {
   color: var(--clr-gray);
   position: absolute;
   top: 0;
-  right: -100vh;
+  right: -100vw;
   min-height: 100vh;
   width: 55vw;
   transition: right 0.5s;
@@ -93,7 +93,9 @@ main {
   display: flex;
   flex-direction: column-reverse;
 }
-
+.show_break {
+  display: none;
+}
 main > section > h1 {
   font-size: 2.2rem;
   margin: 0 auto;
@@ -114,11 +116,19 @@ main > section > p {
 button {
   padding: 0.7em 1.3em;
   border-radius: 20px;
+  border-color: var(--clr-gray);
   display: block;
   margin: 1.5em auto;
   background-color: var(--clr-black);
   color: var(--clr-white);
   font-size: 1.2rem;
+}
+
+main > section > button:where(:hover, :focus) {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
 }
 .client {
   width: 100%;
@@ -138,4 +148,126 @@ button {
 }
 .sub-list img {
   margin-right: 1em;
+}
+.main-image-desktop {
+  display: none;
+}
+
+@media (min-width: 928px) {
+  .main-image,
+  .menu,
+  .close-menu {
+    display: none;
+  }
+  .main-image-desktop {
+    display: block;
+  }
+  header > img {
+    margin-left: 3em;
+  }
+  nav {
+    position: unset;
+    min-height: unset;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    background-color: transparent;
+  }
+  nav > * {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  nav > * > * {
+    margin: 0;
+  }
+  nav > div {
+    margin-left: auto;
+  }
+  ul {
+    margin-left: 3em;
+  }
+  ul li {
+    margin: 0;
+    margin-right: 2em;
+  }
+  ul li span {
+    margin-left: 0.2em;
+  }
+  li:hover,
+  .login:hover,
+  .register:hover {
+    color: var(--clr-black);
+    cursor: pointer;
+  }
+  .register:hover {
+    border: 1.5px solid var(--clr-black);
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    margin: auto;
+    justify-content: space-between;
+  }
+  main > * {
+    width: 40vw;
+  }
+  .main-image-desktop {
+    height: 70vh;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  main > section > h1 {
+    font-size: 5rem;
+    width: 100%;
+  }
+
+  main > section > p,
+  main > section > h1 {
+    text-align: left;
+    padding: 0;
+  }
+  main > section > p {
+    width: 60%;
+  }
+  main > section > button {
+    margin: 5em 0;
+  }
+  section > div {
+    margin-top: auto;
+  }
+  .show_break {
+    display: unset;
+  }
+  .div_with_sublist {
+    position: relative;
+  }
+
+  .div_with_sublist :where(#features-list, #company-list) {
+    position: absolute;
+    z-index: 99;
+    background-color: white;
+    padding: 0.5em 1em;
+    padding-left: 0 !important;
+    box-shadow: -2px 5px 40px -2px rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: -2px 5px 40px -2px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: -2px 5px 40px -2px rgba(0, 0, 0, 0.16);
+  }
+  .div_with_sublist :where(#features-list, #company-list) li {
+    white-space: nowrap;
+    display: flex;
+    gap: 1px;
+    margin-block: 20px;
+  }
+  .div_with_sublist :where(#features-list, #company-list) ul {
+    margin: 0;
+  }
 }
